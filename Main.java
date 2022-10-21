@@ -13,10 +13,10 @@ class Main {
     ArmenianDictionary ad = new ArmenianDictionary();
     System.out.println();
     System.out.println("Welcome to Armenian Dictionary Search.");
-    System.out.println("Բարի գալուստ Հայերեն Բառ Փնտռողին։");
+    System.out.println("Բարի գալուստ Հայերեն Բառ Փնտռողին.");
     System.out.println("Добро пожаловать в поиск по армянскому словарю․");
     System.out.println();
-    System.out.println("Directions:\nTo find a word that starts with a certain letter use - after the letter (Ex. Ա- would give Արարատ). To find a word that ends with a certain letter or phrase use - before the letter (Ex. -ով would give կողով)․ \nEnter '# of words' to see how many words this program contains.");
+    System.out.println("Directions:\nTo find a word that starts with a certain letter use - after the letter (Ex. Ա- would give Արարատ). To find a word that ends with a certain letter or phrase use - before the letter (Ex. -ով would give կողով)․ \nEnter \"# of words\" to see how many words this program contains.");
     System.out.println();
     System.out.println("Հրահանգ:\nՈրոշակի տառով սկսվող բառ գտնելու համար օգտագործեք - տառից հետո (Ex. Ա- կտա Արարատ)։ Որոշակի տառով կամ արտահայտությունով ավարտվող բառ գտնելու համար օգտագործեք - տառից առաջ (Ex. -ով կտա կողով)");
     System.out.println();

@@ -1221,56 +1221,66 @@ String[] armenianDictionary = {
 
   public String getResponse(String input) {
     String response = "";
+    
     if (input.length() == 0) {
-
       response = "\nPlease specify what you would like to search\n";
-    } else if (input.substring(input.length() - 1).equals("-")) {
+    }
+    else if (input.substring(input.length() - 1).equals("-")) {
       response = forwardSearch(input);
-    } else if (input.substring(0, 1).equals("-")) {
+    }
+    else if (input.substring(0, 1).equals("-")) {
       response = endSearch(input);
-    } else if (input.equals("# of words")) {
+    }
+    else if (input.equals("# of words")) {
       response = wordCount();
     }
+    
     // System.out.print(input.length());
     return response;
   }
 
   private String forwardSearch(String searchTerm) {
     String finalterm = "";
+    
     for (int i = 0; armenianDictionary.length > i; i++) {
       String term = armenianDictionary[i];
+      
       if ((searchTerm.length() - 1) > term.length()) {
         System.out.print("");
-      } else if (term.substring(0, searchTerm.length() - 1).equals(searchTerm.substring(0, searchTerm.length() - 1))) {
+      } 
+      else if (term.substring(0, searchTerm.length() - 1).equals(searchTerm.substring(0, searchTerm.length() - 1))) {
         finalterm = term;
         System.out.println(term);
       }
     }
     if (finalterm.equals("")) {
       System.out.println();
-      System.out.println(
-          "Either there are no words in this program that match your search case or the program made a mistake. Please try again.");
+      System.out.println("Either there are no words in this program that match your search case or the program made a mistake. Please try again.");
     }
+    
     return "";
   }
 
   private String endSearch(String searchTerm) {
     String finalterm = "";
+    
     for (int i = 0; armenianDictionary.length > i; i++) {
       String term = armenianDictionary[i];
       int condition = ((term.length() - (searchTerm.length() - 1)));
+      
       if (condition < 0) {
         System.out.print("");
-      } else if (term.substring(term.length() - (searchTerm.length() - 1)).equals(searchTerm.substring(1))) {
+      }
+      else if (term.substring(term.length() - (searchTerm.length() - 1)).equals(searchTerm.substring(1))) {
         finalterm = term;
         System.out.println(term);
       }
     }
     if (finalterm.equals("")) {
       System.out.println();
-      System.out.println(
-          "Either there are no words in this program that match your search case or the program made a mistake. Please try again.");
+      System.out.println("Either there are no words in this program that match your search case or the program made a mistake. Please try again.");
     }
+    
     return "";
   }
 
