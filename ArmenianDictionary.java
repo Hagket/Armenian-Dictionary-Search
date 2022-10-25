@@ -7,7 +7,6 @@ String[] armenianDictionary = {
 "մենք",
 "դուք",
 "նրանք",
-"այս",
 "այստեղ",
 "ով",
 "ինչ",
@@ -1225,6 +1224,9 @@ String[] armenianDictionary = {
     if (input.length() == 0) {
       response = "\nPlease specify what you would like to search\n";
     }
+    else if (!(input.substring(input.length() - 1).equals("-")) && !(input.substring(0, 1).equals("-"))){
+      System.out.println("\nMake sure you use \"-\" before or after your search.");
+    }
     else if (input.substring(input.length() - 1).equals("-")) {
       response = forwardSearch(input);
     }
@@ -1235,12 +1237,13 @@ String[] armenianDictionary = {
       response = wordCount();
     }
     
-    // System.out.print(input.length());
+    //System.out.println(input.length());
+    //System.out.print("#"+input+"#");
     return response;
   }
 
   private String forwardSearch(String searchTerm) {
-    String finalterm = "";
+    int wordsFound = 0;
     
     for (int i = 0; armenianDictionary.length > i; i++) {
       String term = armenianDictionary[i];
@@ -1249,13 +1252,12 @@ String[] armenianDictionary = {
         System.out.print("");
       } 
       else if (term.substring(0, searchTerm.length() - 1).equals(searchTerm.substring(0, searchTerm.length() - 1))) {
-        finalterm = term;
         System.out.println(term);
+        wordsFound++;
       }
     }
-    if (finalterm.equals("")) {
-      System.out.println();
-      System.out.println("Either there are no words in this program that match your search case or the program made a mistake. Please try again.");
+    if (wordsFound==0) {
+      System.out.println("\nEither there are no words in this program that match your search case or the program made a mistake. Please try again.");
     }
     
     return "";
@@ -1277,8 +1279,7 @@ String[] armenianDictionary = {
       }
     }
     if (finalterm.equals("")) {
-      System.out.println();
-      System.out.println("Either there are no words in this program that match your search case or the program made a mistake. Please try again.");
+      System.out.println("\nEither there are no words in this program that match your search case or the program made a mistake. Please try again.");
     }
     
     return "";
